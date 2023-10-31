@@ -1,0 +1,29 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: hpc-ai-demo
+  region: us-east-2
+  version: "1.27"
+
+iam:
+  withOIDC: true
+
+managedNodeGroups: []
+
+nodeGroups:
+  - name: ng-1
+    # instanceType: t4g.2xlarge
+    instanceType: g4dn.xlarge
+    desiredCapacity: 1
+    volumeSize: 80
+    iam:
+      withAddonPolicies:
+        ebs: true
+
+addons:
+  - name: aws-ebs-csi-driver
+    wellKnownPolicies:
+      ebsCSIController: true
+  - name: kube-proxy
+  - name: coredns
