@@ -1,5 +1,44 @@
-.PHONY: build
+# Compiler
+NVCC = nvcc
+
+# Compiler flags
+NVCCFLAGS = -arch=sm_30
+
+# Linker flags
+LDFLAGS = -lm
+
+# Source files
+SRCS = main.cu
+
+# Object files
+OBJS = $(SRCS:.cu=.o)
+
+# Executable name
+EXEC = monte-carlo-cuda
+
+# Build target
+all: $(EXEC)
+
+$(EXEC): $(OBJS)
+	$(NVCC) $(NVCCFLAGS) $(LDFLAGS) $^ -o $@
+
+%.o: %.cu
+	$(NVCC) $(NVCCFLAGS) -c $< -o $@
+
+.PHONY: clean
+# Clean target
+clean:
+	rm -f $(OBJS) $(EXEC)
+
+.PHONY: Build
+# Compile targets and build dockerfile
 build:
+	docker build -t monte-carlo-cuda .
+
+
+.PHONY: deploy
+# Create kubernetes cluster and deploy gpu operator
+deploy:
 	eksctl create cluster -f eks-cluster.yaml
 	# connect to kubernetes cluster
 	eksctl utils write-kubeconfig --cluster=hpc-ai-demo
