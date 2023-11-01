@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Keep HPC Running</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/robotlung.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<!-- These set the border around the presentation -->
+		<div class="line top"></div>
+		<div class="line bottom"></div>
+		<div class="line left"></div>
+		<div class="line right"></div>
+		<!-- Start of main presenataion content -->
+		<div class="reveal">			
+			<div class="slides">
+				<section>
+					<h3 class="title">Keep HPC Running</h3>
+					<h4 class="subtitle">An SRE's Guide to Supporting GPUs on Kubernetes</h4>
+					<p>Presented by: Chris Dutra</p>
+
+				</section>
+				<section>Introduction
+					<section>About SRE</section>
+					<section>Declarative Engineering</section>
+				</section>
+				<section>Observability
+					<section>Golden Signals in GPU-enabled K8s clusters</section>
+					<section>Scheduling</section>
+					<section>Process Isolation</section>
+				</section>
+				<section>Use Case
+					<section>Monte Carlo Simulation</section>
+					<section>Node Problem Detector</section>
+					<section>Capacity Planning</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
