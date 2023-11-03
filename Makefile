@@ -43,4 +43,6 @@ deploy:
 	# connect to kubernetes cluster
 	eksctl utils write-kubeconfig --cluster=hpc-ai-demo
 	# install nvidia gpu operator
+	kubectl create ns gpu-operator
+	kubectl label --overwrite ns gpu-operator pod-security.kubernetes.io/enforce=privileged
 	kubectl create -f https://raw.githubusercontent.com/NVIDIA/gpu-operator/master/deploy/v1.0.0-beta4/
