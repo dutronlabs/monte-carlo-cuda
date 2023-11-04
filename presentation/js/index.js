@@ -35,7 +35,7 @@ Reveal.initialize = options => {
 	// Invoke any enqueued API calls
 	enqueuedAPICalls.map( method => method( Reveal ) );
 
-	return Reveal.initialize();
+	return Reveal.initialize({width:"100%", height:"100%", margin:0.08, minScale:1, maxScale:1});
 
 }
 

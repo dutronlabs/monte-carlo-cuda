@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/robotlung.css" id="theme">
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
@@ -19,22 +19,43 @@
 				<section data-background="assets/title_background.png">
 					<h3 class="title">Keep HPC Running</h3>
 					<h4 class="subtitle">An SRE's Guide to Supporting GPUs on Kubernetes</h4>
-					<p>Presented by: Chris Dutra</p>
+					<p>Chris Dutra</p>
 
 				</section>
-				<section data-background="assets/content.png">Introduction
-					<section>About SRE</section>
-					<section>Declarative Engineering</section>
+				<section data-background="assets/content.png" data-background-size="contain"><h4 class="subtitle">Introduction</h4>
+					<section><h4>About</h4></section>
+					<section><h4 class="subtitle">Defining Reliability</h4>
+						<p>Site Reliability Engineering is the practice of engineering ways to keep customers happy.</p>
+						<ul>
+							<li>Availability</li>
+							<li>Performance</li>
+							<li>Correctness</li>
+						</ul>
+					</section>
+					<section><h4>Declarative Engineering</h4>
+						<div class="r-hstack">
+							<div class="r-vstack">
+								<h4>Declarative</h4>
+								<p>What do we want?</p>
+							</div>
+							<div class="r-vstack">
+								<h4>Imperative</h4>
+								<p>How do we get it?</p>
+							</div>
+						</div>
+					</section>
 				</section>
-				<section>Observability
-					<section>Golden Signals in GPU-enabled K8s clusters</section>
-					<section>Scheduling</section>
+				<section data-background="assets/content.png" data-background-size="contain">What problems do we need to solve?
+					<section>Golden Signals</section>
+					<section>Scheduling Challenges</section>
 					<section>Process Isolation</section>
+					<section>Resiliency</section>
 				</section>
-				<section>Use Case
-					<section>Monte Carlo Simulation</section>
+				<section>Extending Operations to GPU-enabled Kubernetes clusters
+					<section>Node Health</section>
 					<section>Node Problem Detector</section>
-					<section>Capacity Planning</section>
+					<section>Telemetry</section>
+					<section>Affinity</section>
 				</section>
 			</div>
 		</div>
