@@ -312,8 +312,16 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #363636;
+  border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal section img.conf-logo {
+  margin-top: 0px;
+  margin-right: 0px;
+  height: 100px;
+  width: auto;
+  position: absolute;
 }
 
 .reveal section img.plain {
