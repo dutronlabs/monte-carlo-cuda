@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/robotlung.css" id="theme">
-		<link rel="stylesheet" href="css/reveal-override.css">
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
@@ -26,30 +25,36 @@
 					<section>
 						<img src="assets/badge.png" />
 					</section>
-					<section><h4 class="subtitle">Defining Reliability</h4>
-						<p>Site Reliability Engineering is the practice of engineering ways to keep customers happy.</p>
-						<ul>
-							<li>Availability</li>
-							<li>Performance</li>
-							<li>Correctness</li>
-						</ul>
+					<section><h3>Defining Reliability</h3>
+						<p>Site Reliability Engineering is the practice of engineering to keep customers happy.</p>
+						<p>Our aim is to main a desired state, defined by customer expectations.</p>
 					</section>
-					<section><h4>Declarative Engineering</h4>
-						<div class="r-hstack">
-							<div class="r-vstack">
-								<h4>Declarative</h4>
-								<p>What do we want?</p>
+					<section><h3>General Compute vs HPC/AI</h3><br/>
+						<div class="container-2-columns">
+							<div class="item">
+								<h4>General Compute</h4>
+								<p>Typically long-running, low resource workloads, ie. APIs, Web Sites, Microservices</p>
+								<p>SLOs: Availability, Latency, Error Rates</p>
 							</div>
-							<div class="r-vstack">
-								<h4>Imperative</h4>
-								<p>How do we get it?</p>
+							<div class="item">
+								<h4>HPC/AI</h4>
+								<p>Long running, Unique Workloads ie. Machine Learning, Data Science, Rendering</p>
+								<p>SLOs: Availability, Saturation, Duration, Freshness</p>
 							</div>
 						</div>
+						<p>Underneath kubernetes is mostly the same, operating a cluster for HPC/AI is different than traditional compute use cases.</p>
 					</section>
 				</section>
-				<section data-background="assets/content_slide_67p.png" data-background-size="contain">What problems do we need to solve?
-					<section>Golden Signals</section>
-					<section>Scheduling Challenges</section>
+				<section data-background="assets/content_slide_67p.png" data-background-size="contain"><h4 class="subtitle">What problems do we need to solve?</h4>
+					<section><h4>Availability</h4>
+						<ul>
+							<li>Are GPU nodes in your cluster ready to take on tasks to completion?</li>
+							<li>Is additional capacity available in the zone/region/datacenter, should you need it?</li>
+							<li>What's your plan to provision it, if needed? Can it be automated?</li>
+							<li>Is your upstream data equally as available?</li>
+						</ul>
+					</section>
+					<section><h4></h4>Scheduling Challenges</section>
 					<section>Process Isolation</section>
 					<section>Resiliency</section>
 				</section>

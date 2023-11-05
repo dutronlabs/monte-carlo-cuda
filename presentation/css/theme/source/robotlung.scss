@@ -318,3 +318,11 @@ body {
 .reveal .progress {
   z-index: 1000;
   color: #FF80A1; }
+
+
+.container-2-columns {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 300px auto;
+    gap: 5px 5px;
+}
