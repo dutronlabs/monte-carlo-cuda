@@ -4,7 +4,7 @@ kind: ClusterConfig
 metadata:
   name: hpc-ai-demo
   region: us-east-2
-  version: "1.27"
+  version: "1.28"
 
 iam:
   withOIDC: true
@@ -13,16 +13,9 @@ managedNodeGroups: []
 
 nodeGroups:
   - name: ng-1
-    # instanceType: t4g.2xlarge
-    instanceType: g4dn.xlarge
-    ami: ami-0770ab88ec35aa875
-    amiFamily: Ubuntu2004
+    instanceType: t4g.2xlarge
     desiredCapacity: 1
     volumeSize: 100
-    overrideBootstrapCommand: |
-        #!/bin/bash
-        source /var/lib/cloud/scripts/eksctl/bootstrap.helper.sh
-        /etc/eks/bootstrap.sh ${CLUSTER_NAME} --container-runtime containerd --kubelet-extra-args "--node-labels=${NODE_LABELS}"
     iam:
       withAddonPolicies:
         ebs: true
